@@ -1,47 +1,25 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Button, Text, View } from "react-native";
 
-// const Spare2 = () => {
-//   return <Text>Open up App.jskdfn to start working on your app!</Text>;
-// };
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
-
-import React, { useState, useEffect } from "react";
-import { Image } from "react-native";
-import DocumentScanner from "react-native-document-scanner-plugin";
-
-const Spare2 = () => {
-  const [scannedImage, setScannedImage] = useState();
-
-  const scanDocument = async () => {
-    // start the document scanner
-    const { scannedImages } = await DocumentScanner.scanDocument();
-
-    // get back an array with scanned image file paths
-    if (scannedImages.length > 0) {
-      // set the img src, so we can view the first scanned image
-      setScannedImage(scannedImages[0]);
-    }
-  };
-
-  useEffect(() => {
-    // call scanDocument on load
-    scanDocument();
-  }, []);
-
+export default function Spare2({ navigation }) {
   return (
-    <Image
-      resizeMode="contain"
-      style={{ width: "100%", height: "100%" }}
-      source={{ uri: scannedImage }}
-    />
+    <View style={styles.container}>
+      <Text>Bitchhhhhh</Text>
+      {/* <StatusBar style="auto" /> */}
+      <Button
+        title="Click me"
+        onPress={() => {
+          navigation.navigate("Home");
+        }}
+      ></Button>
+    </View>
   );
-};
+}
 
-export default Spare2;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
