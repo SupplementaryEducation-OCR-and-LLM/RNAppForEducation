@@ -1,28 +1,36 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Spare from "./Spare";
-import Spare2 from "./Spare2";
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import FirstPage from './FirstPage';
+import SecondPage from './SecondPage';
 
-export default function App() {
+const reducerFunc = (state, action) => {
+  switch (action.type) {
+    case 'hello':
+      return {text: action.payload};
+    case 'bye':
+      return {text: action.payload};
+    case 'gore pedaret':
+      return {text: action.payload};
+    case 'boro bemir':
+      return {text: action.payload};
+    default:
+      return state;
+  }
+};
+
+const App = () => {
+  // const [display, dispatch] = useReducer(reducerFunc, {text: 'INITIALIZED'});
   const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Spare} />
-        <Stack.Screen name="Bitch" component={Spare2} />
+        <Stack.Screen name="Home" component={FirstPage} />
+        <Stack.Screen name="Bitch" component={SecondPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default App;
