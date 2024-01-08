@@ -1,23 +1,8 @@
-// const SecondPage = ({navigation}) => {
-//   return (
-//     <View style={{margin: 30, backgroundColor: 'gray'}}>
-//       <Text>MotherFucker</Text>
-
-//       <Button
-//         title="Change Me to Home"
-//         onPress={() => navigation.navigate('Home')}
-//       />
-//     </View>
-//   );
-// };
-
-// export default SecondPage;
-
 import React, {useState, useEffect} from 'react';
-import {Image} from 'react-native';
+import {Button, Image, View} from 'react-native';
 import DocumentScanner from 'react-native-document-scanner-plugin';
 
-export default () => {
+export default ({navigation}) => {
   const [scannedImage, setScannedImage] = useState();
 
   const scanDocument = async () => {
@@ -37,10 +22,18 @@ export default () => {
   }, []);
 
   return (
-    <Image
-      resizeMode="contain"
-      style={{width: '100%', height: '100%'}}
-      source={{uri: scannedImage}}
-    />
+    <View style={{backgroundColor: 'red'}}>
+      <Image
+        resizeMode="contain"
+        style={{width: '100%', height: '80%'}}
+        source={{uri: scannedImage}}
+      />
+      <Button
+        title="Proceed to next page"
+        onPress={() => {
+          navigation.navigate('Home');
+        }}
+      />
+    </View>
   );
 };

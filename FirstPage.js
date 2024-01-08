@@ -4,7 +4,7 @@ import React from 'react';
 const FirstPage = ({navigation}) => {
   return (
     <View style={{margin: 30, backgroundColor: 'gray'}}>
-      <Text>Salam</Text>
+      <Text>Salamgjhgsdasd</Text>
 
       <Button
         title="Change Me to Bitch"
