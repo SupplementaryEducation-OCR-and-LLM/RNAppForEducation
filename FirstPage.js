@@ -1,9 +1,15 @@
-import {StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 const FirstPage = ({navigation}) => {
   return (
     <View style={styles.containerStyle}>
+      <Text>Welcome To Your Educational Assistant!</Text>
+      <Image
+        resizeMode="contain"
+        style={{width: '90%', height: '90%'}}
+        source={require('./images/homeImage.jpg')}
+      />
       <TouchableOpacity
         onPress={() => navigation.navigate('Bitch')}
         style={styles.buttonStyle}>
@@ -14,7 +20,7 @@ const FirstPage = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  containerStyle: {margin: 30, backgroundColor: 'gray'},
+  containerStyle: {margin: 25, backgroundColor: 'gray', alignItems: 'center'},
   buttonStyle: {
     alignItems: 'center',
     justifyContent: 'center',
