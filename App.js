@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
+import ScannerConfirmation from './ScannerConfirmation';
 
 // const reducerFunc = (state, action) => {
 //   switch (action.type) {
@@ -28,6 +29,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={FirstPage} />
         <Stack.Screen name="Bitch" component={SecondPage} />
+        <Stack.Screen name="ConfirmScan" component={ScannerConfirmation} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Button, Image, View} from 'react-native';
+import {Image, View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import DocumentScanner from 'react-native-document-scanner-plugin';
 
 export default ({navigation}) => {
@@ -28,12 +28,24 @@ export default ({navigation}) => {
         style={{width: '100%', height: '80%'}}
         source={{uri: scannedImage}}
       />
-      <Button
-        title="Proceed to next page"
-        onPress={() => {
-          navigation.navigate('Home');
-        }}
-      />
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate('ConfirmScan')}
+        style={styles.buttonStyle}>
+        <Text>Confirm Scanned Image</Text>
+      </TouchableOpacity>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  buttonStyle: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black',
+  },
+});
