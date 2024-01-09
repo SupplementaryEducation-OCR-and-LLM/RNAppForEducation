@@ -22,7 +22,7 @@ export default ({navigation}) => {
   }, []);
 
   return (
-    <View style={{backgroundColor: 'red'}}>
+    <View>
       <Image
         resizeMode="contain"
         style={{width: '100%', height: '80%'}}
